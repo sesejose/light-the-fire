@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Light the fire</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li> <a href="assets.html">Assets</a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>        
+
+<!-- Screen -->
+        <section id="screen">
+
+ <!-- Game   -->
+            <div id="game"> 
+
+<!-- Background -->
+
+                <div id="game_background"></div>
+
+<!-- Add points -->
+
+                <div id="add_points" class=""></div>
+
+<!-- Sprites / Objects -->
+                <div id="character"></div>
+                <div id="fire" class=""></div>
+
+                <div id=game_sprites>
+
+                    <div id="container_1" class="">
+                        <div id="sprite_1" class=""></div>
+                    </div>
+
+                    <div id="container_2" class="">
+                        <div id="sprite_2" class=""></div>
+                    </div>
+
+                    <div id="container_3" class="">
+                        <div id="sprite_3" class=""></div>
+                    </div>
+
+                    <div id="container_4" class="">
+                        <div id="sprite_4" class=""></div>
+                    </div>
+
+                    <div id="container_5" class="">
+                        <div id="sprite_5" class=""></div>
+                    </div>
+
+                    <div id="container_11" class="">
+                        <div id="sprite_11" class=""></div>
+                    </div>
+
+                    <div id="container_12" class="">
+                        <div id="sprite_12" class=""></div>
+                    </div>
+
+                    <div id="container_13" class="">
+                        <div id="sprite_13" class=""></div>
+                    </div>
+
+                    <div id="container_14" class="">
+                        <div id="sprite_14" class=""></div>
+                    </div>
+
+                    <div id="container_15" class="">
+                        <div id="sprite_15" class=""></div>
+                    </div>
+
+                    <div id="container_6" class="">
+                        <div id="sprite_6" class=""></div>
+                    </div>
+
+                    <div id="container_7" class="">
+                        <div id="sprite_7" class=""></div>
+                    </div>
+
+                    <div id="container_8" class="">
+                        <div id="sprite_8" class=""></div>
+                    </div>
+
+                    <div id="container_9" class="">
+                        <div id="sprite_9" class=""></div>
+                    </div>
+
+                    <div id="container_10" class="">
+                        <div id="sprite_10" class=""></div>
+                    </div>
+
+                    <div id="container_16" class="">
+                        <div id="sprite_16" class=""></div>
+                    </div>
+
+                    <div id="container_17" class="">
+                        <div id="sprite_17" class=""></div>
+                    </div>
+
+                    <div id="container_18" class="">
+                        <div id="sprite_18" class=""></div>
+                    </div>
+
+                    <div id="container_19" class="">
+                        <div id="sprite_19" class=""></div>
+                    </div>
+
+                    <div id="container_20" class="">
+                        <div id="sprite_20" class=""></div>
+                    </div>
+                    
+                </div>
+
+<!-- Game Foreground / UI -->
+
+                <div id=game_foreground></div>
+                
+                <div id=game_ui>
+
+                    <div id="lives" class=""></div>
+                    <div id="score" class=""></div>
+
+                    <div id="time" class="">
+                        <div id="sprite_time" class="">
+                            <figure>
+                                <img src="assets/time_indicator_1.svg" alt="Time indicator">
+                            </figure>
+                        </div>
+                        <div id="sprite_red" class="">
+                        </div>                        
+                    </div>
+
+                    
+
+                    <!-- <div id="#health_indicator" class=""></div>
+                    <div id="#time_indicator" class=""></div>
+                    <div id="#points_indicator" class=""></div>
+                    <div id="#clock_indicator" class=""></div>
+                    <div id="pause" class=""></div>
+                    <div id="play" class=""></div>
+                    <div id="mute" class=""> </div>
+                    <div id="unmute" class=""></div> -->
+
+
+                    <!-- <div id="questions" class=""></div> -->
+
+                </div>
+
+                <div id="control">
+
+                    <!--  Sounds  -->
+                    <audio id="background_sound" src="assets/background_sound.mp3" loop></audio>
+                    <audio id="fire_one_sound" src="assets/fire_one_sound.mp3" loop></audio>
+                    <audio id="fire_two_sound" src="assets/fire_two_sound.mp3" loop></audio>
+                    <audio id="fire_three_sound" src="assets/fire_three_sound.mp3" loop></audio>
+                    <audio id="ui_sound" src="assets/ui_sound.mp3"></audio>
+                    <audio id="good_sound" src="assets/good_sound.mp3"></audio>
+                    <audio id="bad_sound" src="assets/bad_sound.mp3"></audio>
+                    <audio id="squirrel_sound" src="assets/squirrel_sound.mp3" loop></audio>
+                    <audio id="owl_sound" src="assets/owl_sound.mp3" loop></audio>
+                    <audio id="lose_sound" src="assets/lose_sound.mp3" loop></audio>
+                    <audio id="win_sound" src="assets/win_sound.mp3" loop></audio>
+
+
+
+                    <div id="play" class="hide"></div>
+                    <div id="pause" class=""></div>
+                    <div id="sound_off" class="hide"></div>
+                    <div id="sound_on" class=""></div>
+                </div>
+
+                <div id="instructions" class="hide">
+                    <div id="sprite_instructions"></div>
+                    <div class="title_screens">INSTRUCTIONS</div>
+                    <div class="text_screens">You have 60 seconds to light the fire. To make it and win the game you need to hit 10 dry branches and pine cones. Avoid to click on green branches or pine cones, everytime you do it you will lose a life. If you lose all of the 3 lives the game is over.</div>
+                    <div class="rules_buttons">
+                        <div class="text_screens">
+                            <div id="good_objects"><span>Good objects</span></div>
+                            <div id="bad_objects"><span>Bad objects</span></div>
+                        </div>
+                    </div>
+                    <div id="close" class=""></div>
+                </div>
+
+                <div id="welcome" class="hide">
+                    <div class="title_screens">LIGHT THE FIRE</div>
+                    <div class="text_screens"><p>It is getting dark and Benjamin needs to collect some branches and pine cones to light a fire. It should be when there is still day light and before the night fall, otherwise it will be difficult to find the right branches. Help him to pick up those branches and light the fire. Click on the dry ones, but be careful and avoid those that are still green - these are not good for fire and you will lose a life.</p></div>
+                    <div class="welcome_buttons">
+                        <div id="sprite_welcome" class="buttons">PLAY</div>
+                        <div id="rules" class="buttons">RULES</div>
+                    </div>
+                </div>
+                                
+                <div id="game_over" class="hide">
+                    <div id="sprite_game_over">
+                        <h1>GAME OVER</h1>
+                    </div>
+                </div>
+
+                <!-- <div id="level_complete" class=""></div> -->
+
+                <div id="game_won" class="hide">
+                    <div class="title_screens">You won!</div>
+                    <div class="text_screens"><p>Congratulations, you have picked up enough branches and pine cones to help Benjamin to light the fire and get warm!<br>Do you want to play one more time?</p></div>
+                    <div class="welcome_buttons">
+                    <div id="sprite_game_won"></div>
+                    <div id="home_won" class="buttons"></div>
+                    <div id="play_again_1" class="buttons">PLAY AGAIN</div>
+                    </div>
+                </div>
+
+                <div id="game_lost" class="hide">
+                    <div class="title_screens">You lost!</div>
+                    <div class="text_screens"><p>Unfortunately, you didn’t manage to pick up enough branches or pine cones to help Benjamin to make fire. He’s getting cold now...
+                        Do you want to try one more time?</p></div>
+                    <div class="welcome_buttons">
+                    <div id="sprite_game_lost" class="buttons"></div>
+                    <div id="home_lost" class="buttons"></div>
+                    <div id="play_again_2" class="buttons">PLAY AGAIN</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <aside>
+            <h1>Play Light the fire and help Benjamin to get warm!</h1>
+            <p>Click on dry branches and pine cones and collect 10 of them to light a good fire before you run out of time, you have 60 seconds.
+                Avoid those that are still green - clicking on those branches or pine cones results in losing 1 of 3 lives.</p>
+        </aside>
+
+    </main>
+
+    <footer>
+        José Francisco Sesé | Multimedia Design & Communication | KEA
+        <br>Theme 04 - Basic animation | A website with a game
+    </footer>
+
+    <script src="js/functions.js"></script>
+
+</body>
+
+</html>

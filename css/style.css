@@ -1,0 +1,1913 @@
+
+
+/**************    Mobile First    *******************/
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) { */
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+
+
+body {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    color: #765530;
+    background-color: #0E0D0E;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 10px;
+    max-width: 100%;
+    height: 100%;
+}
+
+#screen {
+    position: relative;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    width: 100vw;
+    height: auto;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+#game {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;    
+    justify-content: center;
+    align-items: center;
+}
+
+#game_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-image: url(../assets/background.svg);
+    background-repeat: no-repeat;
+}
+
+#character {
+    position: absolute;
+    width: 15%;
+    height: 40%;
+    aspect-ratio: 1/1;
+    background-size: 100%;
+    background-image: url(../assets/character.svg);
+    background-repeat: no-repeat;
+    left: 73px;
+    top: 75px;
+}
+ 
+.sprite_fire_1, .sprite_fire_2, .sprite_fire_3 {
+    position: absolute;
+    width: 8%;
+    height: 31%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    left: 104px;
+    top: 136px;
+    /* display: none; */
+}
+
+.sprite_fire_1 {
+background-image: url(../assets/fire_1.svg);
+}
+
+.sprite_fire_2 {
+    background-image: url(../assets/fire_2.svg);
+}
+
+.sprite_fire_3 {
+    background-image: url(../assets/fire_3.svg);
+}
+
+.show {
+    display: inline-flex;
+}
+
+.hide {
+    display: none;
+}
+
+#welcome {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    color: #0E0D0E;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/welcome.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 5;   
+}
+
+#instructions {
+    position:absolute;
+    width: 75%;
+    height: 75%;
+    color: #D6BB84;
+    background-color: #0E0D0E;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url(../assets/welcome.svg); */
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 6;
+}
+
+.title_screens {
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 28px;
+    color: #D6BB84;
+}
+
+.text_screens {
+    display: flex;
+    font-family: inherit;
+    color: #D6BB84;
+    width: 66%;
+    height: auto;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-size: 5px;
+}
+
+#game_lost .text_screens {
+    width: 44% !important;
+}
+
+#game_won .text_screens {
+    width: 44% !important;
+}
+
+
+span {
+    padding-top: 40px;
+    font-size: 6px;
+}
+
+.text_won {
+    width: 66%;
+}
+
+.welcome_buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.rules_buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#rules {
+    display: flex;
+    width: 12%;
+    height: auto;
+    aspect-ratio: 1/1;
+    background-image: url(../assets/points_indicator.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+#sprite_welcome {
+    display: flex;
+    width: 12%;
+    height: auto;
+    aspect-ratio: 1/1;
+    background-image: url(../assets/points_indicator.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.buttons {
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 7px;
+    color: #0E0D0E;
+}
+
+#close {
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    right: -3%;
+    top: -3%;
+    background-image: url(../assets/close.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 6%;
+    height: 12%;
+    aspect-ratio: 1 / 1;
+}
+
+#good_objects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/good_objects.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#bad_objects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/bad_objects.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#game_over {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    color: #584d36;
+    background-color:#0E0D0E;
+    z-index: 4;
+    justify-content: center;
+    align-items: center;
+}
+
+#game_won {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    color: #0E0D0E;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/game_won.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 4;
+}
+
+#game_lost {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    color: #0E0D0E;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/game_lost.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 4;
+}
+
+
+aside {
+    position: relative;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    width: 100%;
+    max-width: fit-content;
+    margin: 0 20px 0 20px
+}
+
+footer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin: 0 20px 0px 20px;
+    font-size: 11px;
+}
+
+
+
+#game_sprites {
+    position: absolute;
+    display: flex;
+    width: 65%;
+    height: 100%;
+    right: 0;
+}
+
+#add_points {
+    /* text-align: center; */
+    /* display: none; */
+    position: absolute;
+    width: 6%;
+    aspect-ratio: 1/1;
+    right: 13%;
+    bottom: 3%;
+    opacity: 0%;
+    background-image: url(../assets/ten_points.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#subtract_life {
+    /* text-align: center; */
+    /* display: none; */
+    position: absolute;
+    scale: 69%;
+    right: 248px;
+    bottom: 3px;
+    opacity: 100%;
+    background-color: #d6bb84;
+    border-radius: 100%;
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+    opacity: 0%;
+}
+
+.pos_1, .pos_2, .pos_3, .pos_4, .pos_5, .pos_6, .pos_7, .pos_8, .pos_9, .pos_10, .pos_11, .pos_12, .pos_13, .pos_14, .pos_15, .pos_16, .pos_17, .pos_18, .pos_19, .pos_20 {
+    position:absolute;
+} 
+
+
+
+.pos_1 {
+    top: -70%;
+    left: 0%;
+}
+
+.pos_2 {
+    top: -70%;
+    left: 9%;
+}
+
+.pos_3 {
+    top: -70%;
+    left: 18%;
+}
+
+.pos_4 {
+    top: -70%;
+    left: 27%;
+}
+
+.pos_5 {
+    top: -70%;
+    left: 36%;
+}
+
+.pos_6 {
+    top: -70%;
+    left: 45%;
+}
+
+.pos_7 {
+    top: -70%;
+    left: 54%;
+}
+
+.pos_8 {
+    top: -70%;
+    left: 63%;
+}
+
+.pos_9 {
+    top: -70%;
+    left: 72%;
+}
+
+.pos_10 {
+    top: -70%;
+    left: 81%;
+}
+
+
+
+/*''''''''''''    Speed   ''''''''''''''*/
+
+/* Pos 1 */
+.speed_1 {
+    animation-duration: 4s;
+    animation-delay: 0.2s;
+    /* animation-delay: 0.2s; */
+}
+.speed_16 {
+    animation-duration: 3.2s;
+    animation-delay: 0.4s;
+    /* animation-delay: 0.2s; */
+}
+/* Pos 2 */
+.speed_11 {
+    animation-duration: 3.9s;
+    animation-delay: 1.4s;
+    /* animation-delay: 0.2s; */
+}
+.speed_6 {
+    animation-duration: 3.1s;
+    animation-delay: 1.6s;
+    /* animation-delay: 0.2s; */
+}
+/* Pos 3 */
+.speed_2 {
+    animation-duration: 3.8s;
+    animation-delay: 1.6s;
+    /* animation-delay: 0.2s; */
+}
+.speed_17 {
+    animation-duration: 3s;
+    animation-delay: 1.8s;
+    /* animation-delay: 0.2s; */
+}
+/* Pos 4 */
+.speed_12 {
+    animation-duration: 3.6s;
+    animation-delay: 0.4s;
+    /* animation-delay: 0.2s; */
+}
+.speed_7 {
+    animation-duration: 2.8s;
+    animation-delay: 0.6s;
+    /* animation-delay: 0.2s; */
+}
+/* Pos 5 */
+.speed_4 {
+    animation-duration: 3.4s;
+    animation-delay: 1.2s;
+    /* animation-delay: 0.2s; */
+}
+.speed_19 {
+    animation-duration: 2.6s;
+    animation-delay:  1.4s;
+    /* animation-delay: 0.2s; */
+}
+/* Pos 6 */
+.speed_13 {
+    animation-duration: 3.3s;
+    animation-delay: 0.8s;
+    /* animation-delay: 0.2s; */
+}
+.speed_8 {
+    animation-duration: 2.5s;
+        animation-delay: 1s;
+        /* animation-delay: 0.2s; */
+}
+/* Pos 7 */
+.speed_3 {
+    animation-duration: 3.5s;
+    animation-delay: 1.8s;
+    /* animation-delay: 0.2s; */
+}
+.speed_18 {
+    animation-duration: 2.7s;
+    animation-delay:  2s;
+    /* animation-delay: 0.2s; */
+}
+/* Pos 8 */
+.speed_15 {
+    animation-duration: 3.7s;
+    animation-delay: 1s;
+    /* animation-delay: 0.2s; */
+}
+.speed_10 {
+    animation-duration: 2.9s;
+    animation-delay: 1.2s;
+    /* animation-delay: 0.2s; */
+}
+/* Pos 9 */
+.speed_14 {
+    animation-duration: 3.8s;
+    animation-delay: 2s;
+    /* animation-delay: 0.2s; */
+}
+.speed_9 {
+    animation-duration: 3s;
+    animation-delay: 2.2s;
+    /* animation-delay: 0.2s; */
+}
+/* Pos 10 */
+.speed_5 {
+    animation-duration: 4s;
+    animation-delay: 0.6s;
+    /* animation-delay: 0.2s; */
+}
+.speed_20 {
+    animation-duration: 3.2s;
+    animation-delay: 0.8s;
+    /* animation-delay: 0.2s; */
+}
+
+
+
+
+#container_1, #container_2, #container_3, #container_4, #container_5, #container_6, #container_7, #container_8, #container_9, #container_10  {
+    position: absolute;
+    width: 20%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    /* z-index: 0; */
+}
+
+#container_11, #container_12, #container_13, #container_14, #container_15, #container_16, #container_17, #container_18, #container_19, #container_20  {
+    position: absolute;
+    width: 20%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    /* z-index: 1; */
+}
+
+
+#sprite_1, #sprite_2, #sprite_3, #sprite_11, #sprite_12 {
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/dry_branches.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#sprite_4, #sprite_5, #sprite_13, #sprite_14, #sprite_15 {
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/dry_pine_cones.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#sprite_6, #sprite_7, #sprite_8, #sprite_16, #sprite_17, #sprite_18 {
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/green_branches.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#sprite_9, #sprite_10, #sprite_19, #sprite_20 {
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/green_pine_cones.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+
+figure{
+    margin: 0;
+    padding: 0;
+}
+
+.assets img {
+    width: 100%;
+    max-width: fit-content;
+}
+
+.assets {
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 100px;
+
+}
+
+
+/* ''''''''''''''   UI   '''''''''''''''''*/
+
+ul {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    padding: 0px;
+}
+
+li{
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: 20px;
+}
+
+li a:link, a:visited {
+    color: #765530;
+    text-decoration: none;
+    
+    
+}
+
+li a:hover {
+    color: #D6BB84;
+    text-decoration: none;
+    
+    
+}
+
+
+h2 {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: 21px;
+}
+
+
+#game_ui {
+    position:absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: end;
+    width: 100%;
+    height:fit-content;
+    bottom: 0px;
+    z-index: 1;
+}
+
+#control {
+    position:absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: end;
+    width: 100%;
+    height:fit-content;
+    bottom: 0px;
+    z-index: 1;
+}
+
+#play, #pause, #sound_off, #sound_on {
+    width: 6%;
+    aspect-ratio: 1/1;
+    margin-left: 2%;
+margin-bottom: 2%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    cursor: pointer;
+}
+
+#lives, #time {
+    width: 6%;
+    aspect-ratio: 1/1;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+#play {
+    background-image: url(../assets/play.svg);
+}
+
+#pause {
+    background-image: url(../assets/pause.svg);
+}
+
+#sound_off {
+    background-image: url(../assets/sound_off.svg);
+}
+
+#sound_on {
+    background-image: url(../assets/sound_on.svg);
+}
+
+#lives {
+    background-image: url(../assets/lives.svg);
+}
+
+#home_won {
+    display: flex;
+    width: 6%;
+    height: auto;
+    aspect-ratio: 1/1;
+    background-image: url(../assets/home.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10px;
+}
+
+#home_lost {
+    display: flex;
+    width: 6%;
+    height: auto;
+    aspect-ratio: 1/1;
+    background-image: url(../assets/home.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 10px;
+}
+
+
+#score {
+    width: 12%;
+    /* aspect-ratio: 1/1; */
+    margin-right: 2%;
+margin-bottom: 2%;
+    background-image: url(../assets/points_indicator.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#time {
+    background-image: url(../assets/time_indicator.svg);
+}
+
+
+#time figure img {
+    width: 100%;
+    /* position:absolute;
+    background-image: url(../assets/time_indicator_1.svg);
+    background-repeat: no-repeat;
+    background-size: 100%; */
+
+}
+
+.score_style {
+    color: #0e0d0e;
+    font-size: 16px;
+    text-align: center;
+}
+
+.lives_style {
+    color: #0e0d0e;
+    font-size: 7px;
+    text-align: end;
+    letter-spacing: 1px;
+    line-height: 7px;
+}
+
+#play_again_2, #play_again_1 {
+    display: flex;
+    width: 12%;
+    height: auto;
+    aspect-ratio: 1/1;
+    background-image: url(../assets/points_indicator.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    /* padding-bottom: 15px; */
+}
+
+
+
+
+/*''''''''''' Classes Animations '''''''''''''*/
+.paused {
+    animation-play-state: paused;
+}
+
+.dry_falling {
+    animation-name: dry_falling;
+    /* animation-duration: 5s; */
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+.green_falling {
+    animation-name: green_falling;
+    /* animation-duration: 5s; */
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+.stop_dry {
+    animation-play-state: paused;
+}
+
+.dry_hit {
+    animation-name: dry_hit;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+}
+
+.green_hit {
+    animation-name: green_hit;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+}
+
+
+.display_ten_points {
+    animation-name: display_ten_points;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+}
+
+.stop_green { 
+    animation-play-state: paused;
+}
+
+.subtract_one_life {
+    animation-name: subtract_one_life;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+}
+
+.shrink {
+    animation-name: shrink;
+    animation-duration: 60s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    position:absolute;
+    z-index: 3;
+}
+
+.shrink_2 {
+    animation-name: shrink_2;
+    animation-duration: 60s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;    
+    background-color: #D6BB84;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 15px;
+    width: 15px;
+    left: 2px;
+    top: 2px;
+    z-index: 2;
+    position: absolute;
+    background-image: linear-gradient(90deg, #D6BB84 50%, #B23330 0);
+}
+
+.shrink_2:before {
+    animation: shrink_2_rotate 30s linear 2, shrink_2_color 60s step-end infinite;
+    background-color: #D6BB84;
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 15px;
+    width: 15px;
+    border-radius: 0 100% 100% 0 / 50%;
+    transform-origin: left;
+    transform: rotate(0deg);
+    animation-play-state: inherit;    
+  }
+
+.fade_in {
+    animation-name: fade_in;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.fade_out {
+    animation-name: fade_out;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* .game_won {
+    animation-name: game_won;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.game_lost {
+    animation-name: game_lost;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+} */
+
+/*''''''''''' Classes Keyframes '''''''''''''*/
+
+@keyframes dry_falling {
+    0% {transform: translateY(-260%);}
+    100% {transform: translateY(760%);} 
+}
+
+@keyframes green_falling {
+    0% {transform: translateY(-260%);}
+    100% {transform: translateY(760%);} 
+}
+
+@keyframes dry_hit {
+    0% {transform: scale(1);}
+    10% {transform: scale(2);}
+    25% {transform: scale(0);}
+    100% {transform: scale(0);}
+}
+
+@keyframes green_hit {
+    0% {transform: scale(1);}
+    10% {transform: scale(2);}
+    25% {transform: scale(0);}
+    100% {transform: scale(0);}
+}
+
+@keyframes display_ten_points {
+    0% {transform: translateY(0%); opacity: 100%;}
+    100% {transform: translateY(-200%); opacity: 0%;}
+}
+
+@keyframes subtract_one_life {
+    0% {opacity: 100%; }
+    25% {opacity: 100%; background-image: url(../assets/subtract_life.svg);}
+    75% {opacity: 100%; background-image: url(../assets/subtract_life.svg); }
+    100% {opacity: 100%; background-image: url(../assets/subtract_life.svg);}
+}
+
+@keyframes shrink {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes shrink_2_rotate {
+    to {transform: rotate(180deg);}
+  }
+  
+@keyframes shrink_2_color {
+    50% {background-color: #B23330;}
+  }
+
+  @keyframes fade_in {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+}
+
+@keyframes fade_out {
+    0% {opacity: 100%;}
+    100% {opacity: 0%;}
+}
+
+/* @keyframes game_won {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+}
+
+@keyframes game_lost {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+} */
+
+
+/*} '''''''''''''''' Mobile First Ends '''''''''''*/
+
+
+
+
+/* Small devices (portrait tablets and large phones, 375px and up) */
+@media only screen and (min-width: 375px) {
+
+    #home_won, #home_lost {
+        margin: 5px 10px;
+    }
+
+    .sprite_fire_1, .sprite_fire_2, .sprite_fire_3 {
+        width: 12%;
+        height: 23%;
+        left: 130px;
+        top: 168px;
+    }
+
+    #add_points {
+        width: 5.8%;
+    }
+
+    .score_style {
+        font-size: 19px;
+    }
+
+    .lives_style {
+        font-size: 7px;
+        letter-spacing: 1px;
+        line-height: 8px;
+    }
+
+    .sprite_fire_1, .sprite_fire_2, .sprite_fire_3 {
+        width: 11%;
+        height: 23%;
+        left: 117px;
+        top: 151px;
+    }
+
+    #character {
+        position: absolute;
+        width: 15%;
+        height: 40%;
+        left: 85px;
+        top: 88px;
+    }
+
+    .shrink_2 {
+        height: 16px;
+        width: 16px;
+        left: 3px;
+        top: 3px;
+    }
+    
+    .shrink_2:before {
+        height: 16px;
+        width: 16px;
+      }
+}
+
+
+
+
+
+
+
+
+
+
+/* Small devices (portrait tablets and large phones, 414px and up) */
+@media only screen and (min-width: 414px) {
+
+    #home_won, #home_lost {
+        margin: 5px 10px;
+    }
+
+    span {
+        padding-top: 40px;
+        font-size: 6px;
+    }   
+
+    .score_style {
+        font-size: 21px;
+    }
+
+    .lives_style {
+        font-size: 7px;
+        letter-spacing: 2px;
+        line-height: 9px;
+    }
+
+    .sprite_fire_1, .sprite_fire_2, .sprite_fire_3 {
+        width: 12%;
+        height: 23%;
+        left: 126px;
+        top: 163px;
+    }
+
+    #character {
+        position: absolute;
+        width: 15%;
+        height: 40%;
+        left: 94px;
+        top: 97px;
+    }
+
+    .shrink_2 {
+        height: 19px;
+        width: 19px;
+        left: 3px;
+        top: 3px;
+    }
+    
+    .shrink_2:before {
+        height: 19px;
+        width: 19px;
+      }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Small devices (portrait tablets and large phones, 428px and up) */
+@media only screen and (min-width: 428px) {
+
+    #home_won, #home_lost {
+        margin: 5px 10px;
+    }
+
+    span {
+        padding-top: 40px;
+        font-size: 6px;
+    }
+    
+
+    .score_style {
+        font-size: 22px;
+    }
+
+    .sprite_fire_1, .sprite_fire_2, .sprite_fire_3 {
+        width: 12%;
+        height: 23%;
+        left: 130px;
+        top: 169px;
+    }
+
+    /* .lives_style {
+        font-size: 7px;
+        letter-spacing: 2px;
+        line-height: 10px;
+    } */
+
+    .shrink_2 {
+        height: 20px;
+        width: 20px;
+        left: 2px;
+        top: 3px;
+    }
+    
+    .shrink_2:before {
+        height: 20px;
+        width: 20px;
+      }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    
+    span {
+        padding-top: 40px;
+        font-size: 11px;
+    }
+    
+   
+    .title_screens {
+        font-size: 72px;
+    }
+    
+    .text_screens {
+        font-size: 11px;
+    }
+
+    .welcome_buttons {
+        padding-bottom: 130px;
+    }
+
+    #sprite_welcome {
+        margin: 10px;
+    }
+    
+    #rules {
+        margin: 10px;
+    }
+
+    .buttons {
+        font-size: 16px;
+    }
+
+    #character {
+        position: absolute;
+        width: 15%;
+        height: 40%;
+        aspect-ratio: 1/1;
+        background-size: 100%;
+        background-image: url(../assets/character.svg);
+        background-repeat: no-repeat;
+        left: 186px;
+        top: 189px;
+    }
+
+    .lives_style {
+        font-size: 16px;
+        letter-spacing: 2px;
+        line-height: 16px;
+    }
+
+    .shrink_2 {
+        height: 36px;
+        width: 36px;
+        left: 6px;
+        top: 6px;
+    }
+
+    
+    .shrink_2::before {
+        height: 36px;
+        width: 36px;
+        
+    }
+
+    .score_style {
+        font-size: 41px;
+    }
+
+    .sprite_fire_1, .sprite_fire_2, .sprite_fire_3 {
+        position: absolute;
+        width: 11%;
+        height: 16%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        left: 250px;
+        top: 326px;
+        /* display: none; */
+    }
+
+    #add_points {
+        text-align: center;
+        /* display: none; */
+        position: absolute;
+        width: 5%;
+        aspect-ratio: 1/1;
+        right: 13.5%;
+        bottom: 4%;
+        opacity: 0%;
+        background-image: url(../assets/ten_points.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+
+
+    .pos_1 {
+        top: -70%;
+        left: 0%;
+    }
+    
+    .pos_2 {
+        top: -70%;
+        left: 9%;
+    }
+    
+    .pos_3 {
+        top: -70%;
+        left: 18%;
+    }
+    
+    .pos_4 {
+        top: -70%;
+        left: 27%;
+    }
+    
+    .pos_5 {
+        top: -70%;
+        left: 36%;
+    }
+    
+    .pos_6 {
+        top: -70%;
+        left: 45%;
+    }
+    
+    .pos_7 {
+        top: -70%;
+        left: 54%;
+    }
+    
+    .pos_8 {
+        top: -70%;
+        left: 63%;
+    }
+    
+    .pos_9 {
+        top: -70%;
+        left: 72%;
+    }
+    
+    .pos_10 {
+        top: -70%;
+        left: 81%;
+    }
+
+    /*''''''''''''    Speed   ''''''''''''''*/
+
+
+    /* Pos 1 */
+    .speed_1 {
+        animation-duration: 4s;
+        animation-delay: 0.2s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_16 {
+        animation-duration: 3.2s;
+        animation-delay: 0.4s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 2 */
+    .speed_11 {
+        animation-duration: 3.9s;
+        animation-delay: 1.4s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_6 {
+        animation-duration: 3.1s;
+        animation-delay: 1.6s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 3 */
+    .speed_2 {
+        animation-duration: 3.8s;
+        animation-delay: 1.6s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_17 {
+        animation-duration: 3s;
+        animation-delay: 1.8s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 4 */
+    .speed_12 {
+        animation-duration: 3.6s;
+        animation-delay: 0.4s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_7 {
+        animation-duration: 2.8s;
+        animation-delay: 0.6s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 5 */
+    .speed_4 {
+        animation-duration: 3.4s;
+        animation-delay: 1.2s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_19 {
+        animation-duration: 2.6s;
+        animation-delay:  1.4s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 6 */
+    .speed_13 {
+        animation-duration: 3.3s;
+        animation-delay: 0.8s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_8 {
+        animation-duration: 2.5s;
+            animation-delay: 1s;
+            /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 7 */
+    .speed_3 {
+        animation-duration: 3.5s;
+        animation-delay: 1.8s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_18 {
+        animation-duration: 2.7s;
+        animation-delay:  2s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 8 */
+    .speed_15 {
+        animation-duration: 3.7s;
+        animation-delay: 1s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_10 {
+        animation-duration: 2.9s;
+        animation-delay: 1.2s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 9 */
+    .speed_14 {
+        animation-duration: 3.8s;
+        animation-delay: 2s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_9 {
+        animation-duration: 3s;
+        animation-delay: 2.2s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+
+    /* Pos 10 */
+    .speed_5 {
+        animation-duration: 4s;
+        animation-delay: 0.6s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_20 {
+        animation-duration: 3.2s;
+        animation-delay: 0.8s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /*''''''''''' Classes Keyframes '''''''''''''*/
+
+    @keyframes dry_falling {
+        0% {transform: translateY(-100%);}
+        100% {transform: translateY(750%);} 
+    }
+    
+    @keyframes green_falling {
+        0% {transform: translateY(-100%);}
+        100% {transform: translateY(750%);} 
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+    #home_won, #home_lost {
+        margin: 5px 20px;
+    }
+    
+    
+    span {
+        padding-top: 40px;
+        font-size: 16px;
+    }
+    
+
+    body {
+        font-family: 'Varela Round', sans-serif;
+        font-size: 16px;
+        margin: 20px;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 75vw 1fr;
+        grid-template-rows: 1fr;
+        gap: 20px;
+        max-width: 100%;
+        /* height: 100%; */
+    }
+
+    aside {
+        position: relative;
+        grid-row: 1 / -1;
+        grid-column: 2 / 3;
+        width: 100%;
+        max-width: fit-content;
+    }
+    
+    footer {
+        /* padding-top: 20px; */
+        margin: 20px 20px 40px 0px;
+        font-size: 16px;
+    }
+    
+    #screen {
+        position: relative;
+        display: grid;
+        grid-row: 1 / 1;
+        grid-column: 1 / 2;
+        width: 76vw;
+        height: 42.75vw;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+    }
+    
+    #game {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        height: 100%;    
+    }
+    
+    #game_background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: 100%;
+        background-image: url(../assets/background.svg);
+        background-repeat: no-repeat;
+    } 
+
+    #character {
+        left: 268px;
+        top: 273px;
+        width: 15%;
+        height: 40%;
+        aspect-ratio: 1/1;
+    }
+
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        height: auto;
+        justify-content: flex-start;
+        padding: 0px;
+    }
+
+    .text_screens {
+        font-size: 16px;
+    }
+
+    .title_screens {
+        font-size: 72px;
+    }
+
+    .welcome_buttons {
+        padding-bottom: 140px;
+    }
+
+    .buttons {
+        font-family: 'Nanum Brush Script', cursive;
+        font-size: 28px;
+        color: #0E0D0E;
+    }
+
+    
+    .lives_style {
+        color: #0e0d0e;
+        font-size: 21px;
+        text-align: end;
+        letter-spacing: 4px;
+        line-height: 23px;
+    }
+
+    .shrink {
+        animation-name: shrink;
+        animation-duration: 60s;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+        width: 100%;
+        height: 100%;
+        position:absolute;
+        z-index: 3;
+    }
+    .shrink_2 {
+        animation-name: shrink_2;
+        animation-duration: 60s;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;    
+        background-color: #D6BB84;
+        border-radius: 50%;
+        overflow: hidden;
+        height: 51px;
+        width: 51px;
+        left: 9px;
+        top: 9px;
+        z-index: 2;
+        position: absolute;
+        background-image: linear-gradient(90deg, #D6BB84 50%, #B23330 0);
+    }
+
+    .shrink_2:before {
+        animation: shrink_2_rotate 30s linear 2, shrink_2_color 60s step-end infinite;
+        background-color: #D6BB84;
+        content: '';
+        display: block;
+        margin-left: 50%;
+        height: 51px;
+        width: 51px;
+        border-radius: 0 100% 100% 0 / 50%;
+        transform-origin: left;
+        transform: rotate(0deg);
+        animation-play-state: inherit;    
+      }
+
+      #time figure img {
+        width: 100%;
+        /* position:absolute;
+        background-image: url(../assets/time_indicator_1.svg);
+        background-repeat: no-repeat;
+        background-size: 100%; */
+        }
+
+        
+    .pos_1 {
+        top: -82%;
+        left: 0%;
+    }
+    
+    
+    .pos_2 {
+        top: -82%;
+        left: 9%;
+    }
+    
+    
+    .pos_3 {
+        top: -82%;
+        left: 18%;
+    }
+    
+    
+    .pos_4 {
+        top: -82%;
+        left: 27%;
+    }
+    
+    
+    .pos_5 {
+        top: -82%;
+        left: 36%;
+    }
+    
+    
+    .pos_6 {
+        top: -82%;
+        left: 45%;
+    }
+    
+    
+    .pos_8 {
+        top: -82%;
+        left: 63%;
+    }
+    
+    
+    .pos_9 {
+        top: -82%;
+        left: 72%;
+    }
+    
+    
+    .pos_10 {
+        top: -82%;
+        left: 81%;
+    }
+
+    /*''''''''''' Classes Keyframes '''''''''''''*/
+
+    @keyframes dry_falling {
+        0% {transform: translateY(-100%);}
+        100% {transform: translateY(850%);} 
+    }
+    
+    @keyframes green_falling {
+        0% {transform: translateY(-100%);}
+        100% {transform: translateY(850%);} 
+    }
+
+    /*''''''''''''    Speed   ''''''''''''''*/
+
+
+    /* Pos 1 */
+    .speed_1 {
+        animation-duration: 5s;
+        animation-delay: 0.2s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_16 {
+        animation-duration: 4.2s;
+        animation-delay: 0.4s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 2 */
+    .speed_11 {
+        animation-duration: 4.9s;
+        animation-delay: 1.4s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_6 {
+        animation-duration: 4.1s;
+        animation-delay: 1.6s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 3 */
+    .speed_2 {
+        animation-duration: 4.8s;
+        animation-delay: 1.6s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_17 {
+        animation-duration: 4s;
+        animation-delay: 1.8s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 4 */
+    .speed_12 {
+        animation-duration: 4.6s;
+        animation-delay: 0.4s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_7 {
+        animation-duration: 3.8s;
+        animation-delay: 0.6s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 5 */
+    .speed_4 {
+        animation-duration: 4.4s;
+        animation-delay: 1.2s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_19 {
+        animation-duration: 3.6s;
+        animation-delay:  1.4s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 6 */
+    .speed_13 {
+        animation-duration: 4.3s;
+        animation-delay: 0.8s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_8 {
+        animation-duration: 3.5s;
+            animation-delay: 1s;
+            /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 7 */
+    .speed_3 {
+        animation-duration: 4.5s;
+        animation-delay: 1.8s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_18 {
+        animation-duration: 3.7s;
+        animation-delay:  2s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 8 */
+    .speed_15 {
+        animation-duration: 4.7s;
+        animation-delay: 1s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_10 {
+        animation-duration: 3.9s;
+        animation-delay: 1.2s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+    /* Pos 9 */
+    .speed_14 {
+        animation-duration: 4.8s;
+        animation-delay: 2s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_9 {
+        animation-duration: 4s;
+        animation-delay: 2.2s;
+        /* animation-delay: 0.2s; */
+    }
+
+
+
+    /* Pos 10 */
+    .speed_5 {
+        animation-duration: 5s;
+        animation-delay: 0.6s;
+        /* animation-delay: 0.2s; */
+    }
+    .speed_20 {
+        animation-duration: 4.2s;
+        animation-delay: 0.8s;
+        /* animation-delay: 0.2s; */
+    }
+
+    .score_style {
+        color: #0e0d0e;
+        font-size: 60px;
+        text-align: center;
+    }
+
+    #add_points {
+        /* text-align: center; */
+        /* display: none; */
+        position: absolute;
+        width: 6%;
+        aspect-ratio: 1/1;
+        right: 152px;
+        bottom: 4%;
+        opacity: 0%;
+        background-image: url(../assets/ten_points.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+        
+    .sprite_fire_1, .sprite_fire_2, .sprite_fire_3 {
+        position: absolute;
+        width: 8vw;
+        height: 31vh;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        left: 365px;
+        top: 475px;
+        /* display: none; */
+    }
+        
+
+}
